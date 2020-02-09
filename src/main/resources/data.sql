@@ -1,0 +1,10 @@
+INSERT INTO category (description) VALUES ('American');
+INSERT INTO category (description) VALUES ('Italian');
+INSERT INTO category (description) VALUES ('Mexican');
+INSERT INTO category (description) VALUES ('Fast Food');
+INSERT INTO unit_of_measure (description, creation_Date) VALUES ('Teaspoon' , sysdate);
+INSERT INTO unit_of_measure (description , creation_Date) VALUES ('Tablespoon' , sysdate);
+INSERT INTO unit_of_measure (description,creation_Date) VALUES ('Cup' , sysdate);
+INSERT INTO unit_of_measure (description,creation_Date) VALUES ('Pinch',sysdate);
+INSERT INTO unit_of_measure (description,creation_Date) VALUES ('Dash',sysdate);
+INSERT INTO unit_of_measure (description,creation_Date) VALUES ('Each',sysdate);
