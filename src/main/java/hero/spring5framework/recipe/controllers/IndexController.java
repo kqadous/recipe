@@ -3,6 +3,7 @@ package hero.spring5framework.recipe.controllers;
 import hero.spring5framework.recipe.domain.UnitOfMeasure;
 import hero.spring5framework.recipe.repositories.UnitOfMeasureRepository;
 import hero.spring5framework.recipe.services.RecipeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.time.LocalDate;
 import java.util.Optional;
 
+@Slf4j
 @Controller
 public class IndexController {
 
@@ -23,7 +25,7 @@ public class IndexController {
 
     @RequestMapping({"" , "/" , "/index" , "/index.html"})
     public String goIndex(Model model) {
-
+        log.debug("Getting index page...");
         System.out.println("Used unit of measure::"+unitOfMeasureRepository.findByDescription("Cup").get().getDescription());
 
         Optional<UnitOfMeasure> findByDescriptionAndCreationDate = unitOfMeasureRepository.

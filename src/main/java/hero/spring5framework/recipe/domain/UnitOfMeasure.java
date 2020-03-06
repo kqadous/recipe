@@ -1,5 +1,6 @@
 package hero.spring5framework.recipe.domain;
 
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Data
 @Entity
 public class UnitOfMeasure {
 
@@ -20,19 +22,4 @@ public class UnitOfMeasure {
     @CreationTimestamp
     private LocalDate creationDate;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

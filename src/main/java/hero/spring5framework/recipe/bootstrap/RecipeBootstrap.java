@@ -5,6 +5,7 @@ import hero.spring5framework.recipe.domain.enums.Difficulty;
 import hero.spring5framework.recipe.repositories.CategoryRepository;
 import hero.spring5framework.recipe.repositories.RecipeRepository;
 import hero.spring5framework.recipe.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -32,6 +34,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
         recipeRepository.saveAll(getRecipes());
+        log.debug("RecipeBootstrap.... initialize app");
     }
 
     private List<Recipe> getRecipes() {
